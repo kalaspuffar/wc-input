@@ -42,36 +42,37 @@ class WcInput extends LitElement {
           background-color: #CFD8DC;
           border-bottom: 3px solid #9C27B0;
         }        
-
+        
         label {
           position: relative;
+          font-size: 16pt;
+          top: -16px;
+          color: #000;        
+        }
+
+        input:focus + label, 
+        input:not(:placeholder-shown) + label {
+          position: relative;
           color: #9C27B0;
-          top: -26px;
+          top: -32px;
+          font-size: 12pt;
           transition: 
             top cubic-bezier(0.6, -0.28, 0.735, 0.045) 0.1s, 
             color cubic-bezier(0.6, -0.28, 0.735, 0.045) 0.1s, 
             font-size cubic-bezier(0.6, -0.28, 0.735, 0.045) 0.1s;
         }
 
-        input:not(:focus) + label {
-          position: relative;
-          font-size: 16pt;
-          top: -16px;
-          color: #000;
-        }
       </style>
       <div class="box">
-        <input id="specificInputBox" aria-label="${label}" />  
+        <input aria-label="${label}" placeholder=" " />  
         <label>${label}<label>
       </div>
     `;
   }
+
   static get properties() {
     return {
-      label: {
-        type: String,
-        value: '',
-      },
+      label: String,
     };
   }
 
@@ -79,6 +80,18 @@ class WcInput extends LitElement {
     super.ready();
     let inputEl = this._root.querySelector('input');
     let boxEl = this._root.querySelector('.box');
+
+    inputEl.addEventListener('keyup', e => {        
+      if(e.keyCode == 13) {
+        this.dispatchEvent(new CustomEvent('enter-pressed'));
+      }
+
+      this.dispatchEvent(new CustomEvent('text-entered', {
+        detail: {
+          text: e.target.value
+        }
+      }));      
+    });
 
     inputEl.addEventListener('focus', e => {        
       boxEl.className = 'box box-selected';      
