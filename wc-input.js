@@ -6,8 +6,7 @@ import {LitElement, html} from '@polymer/lit-element';
  * @demo demo/index.html
  */
 class WcInput extends LitElement {
-  //static get template() {
-  _render({label}) {
+  render() {
     return html`
       <style>
         :host {
@@ -65,8 +64,8 @@ class WcInput extends LitElement {
 
       </style>
       <div class="box">
-        <input aria-label="${label}" placeholder=" " />
-        <label>${label}<label>
+        <input aria-label="${this.label}" placeholder=" " />
+        <label>${this.label}<label>
       </div>
     `;
   }

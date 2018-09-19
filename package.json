@@ -3,7 +3,7 @@
   "description": "Webcomponent input design around a new material style.",
   "author": "Daniel Persson (mailto.woden@gmail.com)",
   "license": "MIT",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "wc-input.js",
   "repository": {
     "type": "git",
