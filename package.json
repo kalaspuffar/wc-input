@@ -3,7 +3,7 @@
   "description": "Webcomponent input design around a new material style.",
   "author": "Daniel Persson (mailto.woden@gmail.com)",
   "license": "MIT",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "wc-input.js",
   "repository": {
     "type": "git",
@@ -14,11 +14,11 @@
   },
   "homepage": "https://github.com/kalaspuffar/wc-input#readme",
   "dependencies": {
-    "@polymer/lit-element": "^0.5.1"
+    "@polymer/lit-element": "^0.6.1"
   },
   "devDependencies": {
-    "@polymer/iron-demo-helpers": "^3.0.0-pre.19",
-    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "@polymer/iron-demo-helpers": "^3.0.2",
+    "@webcomponents/webcomponentsjs": "^2.1.3",
     "wct-browser-legacy": "^1.0.0"
   }
 }
