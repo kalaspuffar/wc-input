@@ -1,3 +1,9 @@
+/**
+ * @license
+ * Copyright (c) 2018 Daniel
+ * This code may only be used under the MIT style license found at
+ * https://github.com/kalaspuffar/wc-input/blob/master/LICENSE
+ */
 import {LitElement, html} from '@polymer/lit-element';
 /**
  * `wc-input`
